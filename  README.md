@@ -1,3 +1,5 @@
+job4j_design job4j_design job4j_design job4j_design job4j_design job4j_design
+job4j_design job4j_design job4j_design job4j_design job4j_design job4j_design
 В этом уроке мы вспомним, какие инструменты использовались в курсе и подготовим окружение для второго уровня.
 
 JDK - набор программ для разработки на языке Java. Если прохождение курса у вас затянулось, то стоит обновить Java.
