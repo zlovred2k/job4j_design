@@ -1,12 +1,5 @@
 job4j_design job4j_design job4j_design job4j_design job4j_design job4j_design
 job4j_design job4j_design job4j_design job4j_design job4j_design job4j_design
-В этом уроке мы вспомним, какие инструменты использовались в курсе и подготовим окружение для второго уровня.
-
-JDK - набор программ для разработки на языке Java. Если прохождение курса у вас затянулось, то стоит обновить Java.
-Новые версии JDK выходят каждые полгода.
-
-IDEA - среда разработки для Java. Здесь без изменений. Продолжаем использовать. Обновлять ее не советую. Хоть среда и
-шикарна, но каждая новая версия использует все больше и больше ресурсов компьютера.
-
-GitHub - ранее мы делали fork репозиториев c гитхаб, т.е. использовали копию готового проекта. В этом уроке мы научимся
-создавать проект с нуля.
+job4j_design job4j_design job4j_design job4j_design job4j_design job4j_design
+job4j_design job4j_design job4j_design job4j_design job4j_design job4j_design
+job4j_design job4j_design job4j_design job4j_design job4j_design job4j_design
