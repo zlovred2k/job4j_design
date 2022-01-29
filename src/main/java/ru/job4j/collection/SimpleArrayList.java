@@ -27,10 +27,7 @@ public class SimpleArrayList<T> implements List<T> {
     @Override
     public T set(int index, T newValue) {
         T t = get(index);
-        if (container.length == size) {
-            container = grow();
-        }
-        System.arraycopy(container, index, container, index + 1, size - index);
+        System.arraycopy(container, index + 1, container, index + 1, size - index - 1);
         container[index] = newValue;
         modCount++;
         return t;
