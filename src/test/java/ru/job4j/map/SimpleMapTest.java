@@ -27,14 +27,14 @@ public class SimpleMapTest {
     public void whenGetValue() {
         SimpleMap<Integer, Integer> simpleMap = new SimpleMap<>();
         simpleMap.put(1, 1);
-        assertThat(simpleMap.get(1),is(1));
+        assertThat(simpleMap.get(1), is(1));
     }
 
     @Test
     public void whenGetNull() {
         SimpleMap<Integer, Integer> simpleMap = new SimpleMap<>();
         simpleMap.put(1, 1);
-        assertThat(simpleMap.get(2),is(nullValue()));
+        assertThat(simpleMap.get(2), is(nullValue()));
     }
 
     @Test
