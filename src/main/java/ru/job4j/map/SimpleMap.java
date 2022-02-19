@@ -16,7 +16,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean put(K key, V value) {
-        if ((float) count / (float) capacity >= LOAD_FACTOR) {
+        if ((float) count / capacity >= LOAD_FACTOR) {
             expand();
         }
         boolean rsl = false;
@@ -46,6 +46,8 @@ public class SimpleMap<K, V> implements Map<K, V> {
         for (int i = 0; i < capacity / 2; i++) {
             if (temp[i] != null) {
                 put(temp[i].key, temp[i].value);
+                count--;
+                modCount--;
             }
         }
     }
