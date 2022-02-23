@@ -15,18 +15,27 @@ public class ConfigTest {
         Config config = new Config(path);
         config.load();
         assertThat(config.value("name"), is("Petr Arsentev"));
-        assertThat(config.value("surname"), is(nullValue()));
-        assertThat(config.value("#Test"), is(nullValue()));
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void whenException() {
+    public void whenExceptionAfter() {
+        String path = "./data/exc_test2.properties";
+        Config config = new Config(path);
+        config.load();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void whenExceptionBefore() {
         String path = "./data/exc_test.properties";
         Config config = new Config(path);
         config.load();
     }
 
-
-
-
+    @Test
+    public void whenComment() {
+        String path = "./data/pair_without_comment.properties";
+        Config config = new Config(path);
+        config.load();
+        assertThat(config.value("#Test"), is(nullValue()));
+    }
 }
