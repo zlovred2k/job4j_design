@@ -26,7 +26,7 @@ public class AbuseTest {
         }
         Abuse.drop(source.getAbsolutePath(), target.getAbsolutePath(), List.of("foolish", "php"));
         StringBuilder rsl = new StringBuilder();
-        try(BufferedReader in = new BufferedReader(new FileReader(target))) {
+        try (BufferedReader in = new BufferedReader(new FileReader(target))) {
             in.lines().forEach(rsl::append);
         }
         assertThat(rsl.toString(), is("hello dude java job4j "));

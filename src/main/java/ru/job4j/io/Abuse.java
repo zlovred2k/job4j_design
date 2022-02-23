@@ -6,7 +6,6 @@ import java.util.stream.Stream;
 
 public class Abuse {
 
-
     public static void drop(String source, String target, List<String> words) throws IOException {
         try (BufferedReader in = new BufferedReader(new FileReader(source));
              PrintWriter out = new PrintWriter(new BufferedOutputStream(new FileOutputStream(target)))) {
@@ -16,9 +15,5 @@ public class Abuse {
                     .map(word -> word + " ")
                     .forEach(out::print);
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 }
