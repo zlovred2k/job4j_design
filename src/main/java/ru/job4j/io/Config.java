@@ -3,6 +3,7 @@ package ru.job4j.io;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
@@ -10,7 +11,7 @@ import java.util.StringJoiner;
 public class Config {
 
     private final String path;
-    private final Map<String, String> values = new HashMap<String, String>();
+    private final Map<String, String> values = new HashMap<>();
 
     public Config(final String path) {
         this.path = path;
@@ -25,7 +26,7 @@ public class Config {
                             throw new IllegalArgumentException();
                         }
                     })
-                    .map(x -> x.split("="))
+                    .map(x -> x.split("=", 2))
                     .forEach(x -> values.put(x[0], x[1]));
         } catch (IOException e) {
             e.printStackTrace();
