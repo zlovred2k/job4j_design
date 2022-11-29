@@ -3,7 +3,6 @@ package ru.job4j.io;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.StringJoiner;
@@ -20,9 +19,9 @@ public class Config {
     public void load() {
         try (BufferedReader read = new BufferedReader(new FileReader(this.path))) {
             read.lines()
-                    .filter(x -> !x.startsWith("#") && x.contains("="))
+                    .filter(x -> !x.isBlank() && !x.startsWith("#"))
                     .peek(x -> {
-                        if (x.startsWith("=") || x.endsWith("=")) {
+                        if (!x.contains("=") || x.startsWith("=") || x.indexOf("=") == x.length() - 1) {
                             throw new IllegalArgumentException();
                         }
                     })
