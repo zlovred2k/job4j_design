@@ -3,7 +3,7 @@ package ru.job4j.io;
 import java.io.*;
 
 public class Analizy {
-
+    //split[0].equals("500") "500".equals(split[0])
     public void unavailable(String source, String target) {
         StringBuilder log = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(source))) {
@@ -11,16 +11,14 @@ public class Analizy {
                 String line;
                 while ((line = in.readLine()) != null) {
                     String[] split = line.split(" ");
-                    if (log.length() == 0 && split[0].equals("500") || split[0].equals("400")) {
+                    if (log.length() == 0 && "500".equals(split[0]) || "400".equals(split[0])) {
                         log = new StringBuilder(split[1]);
-                    } else if (log.length() != 0 && split[0].equals("200") || split[0].equals("300")) {
+                    } else if (log.length() != 0 && "200".equals(split[0]) || "300".equals(split[0])) {
                         log.append(";").append(split[1]).append(";");
                         out.println(log);
                         log = new StringBuilder();
                     }
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
             }
         } catch (Exception e) {
             e.printStackTrace();
