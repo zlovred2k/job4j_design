@@ -3,7 +3,7 @@ package ru.job4j.io;
 import java.io.*;
 
 public class Analizy {
-    //split[0].equals("500") "500".equals(split[0])
+
     public void unavailable(String source, String target) {
         StringBuilder log = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(source))) {
