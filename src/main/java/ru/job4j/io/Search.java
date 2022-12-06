@@ -23,6 +23,7 @@ public class Search {
     }
 
     private static void validateArgs(String[] args) {
+
         if (args.length != 2) {
             throw new IllegalArgumentException("Two arguments are expected");
         }
