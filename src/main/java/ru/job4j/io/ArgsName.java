@@ -21,30 +21,30 @@ public class ArgsName {
         }
         for (String arg : args) {
             validateArgs(arg);
-            pairs = arg.substring(1).trim().split("=", 2);
+            pairs = arg.substring(1).split("=", 2);
             values.put(pairs[0], pairs[1]);
         }
     }
 
     private static void validateArgs(String str) {
-        if (str.isBlank()) {
-            throw new IllegalArgumentException("Данные отсутствуют");
-        }
         if (!str.contains("=")) {
-            throw new IllegalArgumentException("Нет знака '='");
+            throw new IllegalArgumentException("Нет знака '=' " + str);
         }
         if (str.indexOf("=") == str.length() - 1) {
-            throw new IllegalArgumentException("Пара значений не найдена");
+            throw new IllegalArgumentException("Пара значений не найдена" + str);
         }
         if (str.startsWith("-=")) {
-            throw new IllegalArgumentException("Ключ отсутствует");
+            throw new IllegalArgumentException("Ключ отсутствует" + str);
         }
         if (!str.startsWith("-")) {
-            throw new IllegalArgumentException("Нет знака '-'");
+            throw new IllegalArgumentException("Нет знака '-'" + str);
         }
     }
 
     public static ArgsName of(String[] args) {
+        if (args.length == 0) {
+            throw new IllegalArgumentException("Нет параметров");
+        }
         ArgsName names = new ArgsName();
         names.parse(args);
         return names;
