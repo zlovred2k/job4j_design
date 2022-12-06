@@ -33,7 +33,7 @@ public class Search {
         if (!new File(args[0]).isDirectory()) {
             throw new IllegalArgumentException(String.format("Not directory %s", args[0]));
         }
-        if (!args[1].startsWith(".")) {
+        if (!args[1].startsWith(".") && args[1].length() > 1) {
             throw new IllegalArgumentException(String.format("Not an extension %s", args[1]));
         }
     }
