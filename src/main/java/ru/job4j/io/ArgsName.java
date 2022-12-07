@@ -9,16 +9,13 @@ public class ArgsName {
 
     public String get(String key) {
         if (values.get(key) == null) {
-            throw new IllegalArgumentException("Нет значения");
+            throw new IllegalArgumentException(String.format("Нет значения %s", key));
         }
         return values.get(key);
     }
 
     private void parse(String[] args) {
         String[] pairs;
-        if (args.length == 0) {
-            throw new IllegalArgumentException("Нет параметров");
-        }
         for (String arg : args) {
             validateArgs(arg);
             pairs = arg.substring(1).split("=", 2);
@@ -28,16 +25,16 @@ public class ArgsName {
 
     private static void validateArgs(String str) {
         if (!str.contains("=")) {
-            throw new IllegalArgumentException("Нет знака '=' " + str);
+            throw new IllegalArgumentException(String.format("Нет знака '=' %s", str));
         }
         if (str.indexOf("=") == str.length() - 1) {
-            throw new IllegalArgumentException("Пара значений не найдена" + str);
+            throw new IllegalArgumentException(String.format("Пара значений не найдена %s", str));
         }
         if (str.startsWith("-=")) {
-            throw new IllegalArgumentException("Ключ отсутствует" + str);
+            throw new IllegalArgumentException(String.format("Ключ отсутствует %s", str));
         }
         if (!str.startsWith("-")) {
-            throw new IllegalArgumentException("Нет знака '-'" + str);
+            throw new IllegalArgumentException(String.format("Нет знака '-' %s", str));
         }
     }
 
